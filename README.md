@@ -1,59 +1,62 @@
-Front Desk System 
+🏥 Front Desk Management System
 
-This is a Front Desk Management System . The application focuses on managing patient queues and doctor appointments in a clinic setup. The system is developed using NestJS (Backend) and Next.js (Frontend), with MySQL as the database.
-Tech Stack 🛠️
+A Full-Stack Clinic Front Desk Application designed to manage Patient Queues and Doctor Appointments seamlessly, using modern technologies like NestJS, Next.js, and MySQL.
+🛠️ Tech Stack
+Component	Technology
+Backend	NestJS + TypeORM
+Frontend	Next.js 14 (App Router)
+Database	MySQL (Railway Cloud)
+ORM	TypeORM
+Deployment	Railway (DB), Localhost (App - Pending Deployment)
+✅ Features Implemented
 
-    Backend: NestJS + TypeORM
+    🔐 User Authentication (JWT)
 
-    Frontend: Next.js 14 (App Router)
+    👨‍⚕️ Doctor Management (CRUD Operations)
 
-    Database: MySQL (Hosted on Railway)
+    🧑‍🤝‍🧑 Patient Queue System (Add/View Queue)
 
-    ORM: TypeORM
+    🗓️ Appointment Module (Book / Reschedule / Cancel)
 
-    Deployment: Railway (Database), Localhost (App - Pending deployment)
+    🗄️ MySQL Database Integration
 
-Features Implemented ✅
+    📦 Modular NestJS Folder Structure
 
-    User Authentication (JWT-based)
+    🔄 API Integration with Frontend (In Progress)
 
-    Doctor Module (CRUD)
-
-    Queue Management (Add to Queue, View Current Queue)
-
-    Appointment Module (Book, Reschedule, Cancel)
-
-    Database Integration with MySQL
-
-    Modular Folder Structure for NestJS
-
-    API integration for frontend (in progress)
-
-
-How to Run Locally 🖥️
-1. Clone the repository
+🚀 How to Run Locally
+1️⃣ Clone Repository
 
 git clone https://github.com/vardhan011/desk.git
 cd desk
 
-2. Setup Backend
+2️⃣ Setup Backend
 
 cd front-desk-backend
 npm install
 
-3. Configure .env
+3️⃣ Configure Environment Variables
 
-Create a .env file in front-desk-backend/ and add:
+Create a .env file inside front-desk-backend/:
 
 DATABASE_URL=mysql://root:<password>@<host>:<port>/railway
 JWT_SECRET=your_jwt_secret
 
-4. Run Backend Server
+4️⃣ Run Backend Server
 
 npm run start:dev
 
-5. Setup Frontend
+5️⃣ Setup Frontend
 
 cd ../frontdesk-frontend
 npm install
 npm run dev
+
+📡 API Endpoints
+Method	Endpoint	Description
+POST	/auth/login	User Login (JWT)
+GET	/doctors	Fetch All Doctors
+POST	/doctors	Add New Doctor
+GET	/queue	View Current Queue
+POST	/queue	Add Patient to Queue
+POST	/appointments	Book an Appointment
