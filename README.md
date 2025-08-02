@@ -52,11 +52,4 @@ cd ../frontdesk-frontend
 npm install
 npm run dev
 
-📡 API Endpoints
-Method	Endpoint	Description
-POST	/auth/login	User Login (JWT)
-GET	/doctors	Fetch All Doctors
-POST	/doctors	Add New Doctor
-GET	/queue	View Current Queue
-POST	/queue	Add Patient to Queue
-POST	/appointments	Book an Appointment
+
