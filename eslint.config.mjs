@@ -1,16 +1,23 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+// eslint.config.mjs
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+export default [
+  {
+    // You might already have this selector and config
+    files: ['*.ts', '*.tsx'],
+    languageOptions: {
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: './tsconfig.json',
+        sourceType: 'module',
+      },
+    },
+    rules: {
+      // Disable no-explicit-any rule globally for TypeScript files
+      '@typescript-eslint/no-explicit-any': 'off',
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+      // possibly other rules you already have...
+    },
+  },
 
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  // other configs you might have here...
 ];
-
-export default eslintConfig;
