@@ -60,4 +60,4 @@ npm run start:dev
 
 cd ../frontdesk-frontend
 npm install
-npm run dev5b588a1cd11af9fbffc136174cd9e3d
+npm run dev
