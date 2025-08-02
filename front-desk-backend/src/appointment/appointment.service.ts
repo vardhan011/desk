@@ -13,7 +13,7 @@ export class AppointmentsService {
     private appointments: Appointment[] = [];
     private currentId = 1;
 
-    constructor(private readonly queueService: QueueService) { } // Proper injection
+    constructor(private readonly queueService: QueueService) { }
 
     findAll(): Appointment[] {
         return this.appointments;
@@ -29,13 +29,13 @@ export class AppointmentsService {
             ...data,
         };
 
-        // Push to appointments list
+
         this.appointments.push(newAppointment);
 
-        // Add corresponding patient to the queue with default priority 0
+
         await this.queueService.addPatientToQueue(
             { name: data.patientName },
-            0, // priority, adjust if needed
+            0,
         );
 
         return newAppointment;

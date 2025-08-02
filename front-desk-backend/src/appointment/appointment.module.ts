@@ -6,9 +6,9 @@ import { AppointmentsService } from './appointment.service';
 import { QueueModule } from 'src/queue/queue.module';
 
 @Module({
-  imports: [QueueModule],
+  imports: [QueueModule], //importing the module
   controllers: [AppointmentsController],
   providers: [AppointmentsService],
-  exports: [AppointmentsService],
+  exports: [AppointmentsService], //exporting the module
 })
 export class AppointmentsModule { }

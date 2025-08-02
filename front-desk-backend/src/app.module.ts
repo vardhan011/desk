@@ -23,22 +23,21 @@ import { User } from './entities/user.entity';
     }),
 
     TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],  // import ConfigModule to inject ConfigService
+      imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
         type: 'mysql',
-        url: process.env.DATABASE_URL,
-        // host: configService.get<string>('DB_HOST', 'localhost'),
-        // port: configService.get<number>('DB_PORT', 3306),
-        // username: configService.get<string>('DB_USERNAME', 'root'),
-        // password: configService.get<string>('DB_PASSWORD', 'root'),
-        // database: configService.get<string>('DB_NAME', 'clinic'),
+        host: configService.get<string>('DB_HOST', 'localhost'),
+        port: configService.get<number>('DB_PORT', 3306),
+        username: configService.get<string>('DB_USERNAME', 'root'),
+        password: configService.get<string>('DB_PASSWORD', 'root'),
+        database: configService.get<string>('DB_NAME', 'clinic'),
         entities: [Doctor, Patient, QueueItem, Appointment, User, AuthModule],
-        synchronize: true, // WARNING: set false in production!
+        synchronize: true, //false in production
       }),
       inject: [ConfigService],
     }),
 
-    // Don't register JwtModule here; AuthModule should handle it
+
     DoctorModule,
     PatientModule,
     QueueModule,

@@ -14,8 +14,8 @@ export class Appointment {
     patient: Patient;
 
     @Column()
-    time: string; // ISO string or time string
+    time: string;
 
     @Column()
-    status: string; // Booked, Completed, Cancelled
+    status: string;
 }

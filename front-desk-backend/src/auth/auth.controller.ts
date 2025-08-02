@@ -3,10 +3,11 @@ import { AuthService } from './auth.service';
 
 @Controller('auth')
 export class AuthController {
-    constructor(private authService: AuthService) { }
+    constructor(private authService: AuthService) { } //taken from authservices
+
 
     @Post('register')
-    async register(@Body('username') username: string, @Body('password') password: string) {
+    async register(@Body('username') username: string, @Body('password') password: string) { //for registering
         try {
             return await this.authService.register(username, password);
         } catch (error) {
@@ -15,7 +16,7 @@ export class AuthController {
     }
 
     @Post('login')
-    async login(@Body('username') username: string, @Body('password') password: string) {
+    async login(@Body('username') username: string, @Body('password') password: string) { //for the login
         return this.authService.login(username, password);
     }
 }

@@ -5,7 +5,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Patient } from 'src/entities/patient.entity';
 
 @Module({
-  //import thr patients entity
   imports: [
     TypeOrmModule.forFeature([Patient])
   ],

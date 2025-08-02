@@ -8,8 +8,8 @@ import {
     UseGuards,
     ParseIntPipe,
 } from '@nestjs/common';
-import { JwtAuthGuard } from '../auth/jwt-auth.guard'; // adjust import path
-import { AppointmentsService } from './appointment.service'; // ensure correct path
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { AppointmentsService } from './appointment.service';
 
 @Controller('appointments')
 @UseGuards(JwtAuthGuard)

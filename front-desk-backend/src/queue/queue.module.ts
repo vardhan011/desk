@@ -10,6 +10,6 @@ import { QueueController } from './queue.controller';
   imports: [TypeOrmModule.forFeature([QueueItem, Patient])],
   providers: [QueueService],
   controllers: [QueueController],
-  exports: [QueueService], // Export to other modules (e.g. AppointmentsModule)
+  exports: [QueueService],
 })
 export class QueueModule { }

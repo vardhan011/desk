@@ -8,7 +8,7 @@ export class Patient {
     @Column()
     name: string;
 
-    @Column({ nullable: true })  // allow nulls for age
+    @Column({ nullable: true })
     age?: number;
 
     @Column({ nullable: true })

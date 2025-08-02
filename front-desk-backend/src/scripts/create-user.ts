@@ -1,10 +1,10 @@
 import { DataSource } from 'typeorm';
 import * as bcrypt from 'bcryptjs';
-import { User } from '../entities/user.entity'; // Adjust path accordingly
+import { User } from '../entities/user.entity';
 
 async function createUser() {
     const dataSource = new DataSource({
-        type: 'mysql', // or your DB type
+        type: 'mysql',
         host: 'localhost',
         port: 3306,
         username: 'root',
